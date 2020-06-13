@@ -1,0 +1,42 @@
+.imggridrow {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    -ms-flex-wrap: wrap;
+}
+
+.imggridcolumn {
+    -ms-flex: 50%;
+    flex: 50%;
+    padding: 0 4px;
+}
+
+.imggridcolumn img {
+    margin-top: 16px;
+    vertical-align: middle;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn.active {
+    background-color: #666;
+    color: white;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+
+#button-container {
+    text-align: center;
+    font-family: Lato, sans-serif;
+}

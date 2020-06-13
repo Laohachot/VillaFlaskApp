@@ -1,0 +1,29 @@
+.main-title {
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: sans-serif;
+}
+
+#top-text {
+    text-align: center;
+}
+
+#topnav {
+    background-color: rgb(238, 232, 174);
+    overflow: hidden;
+}
+
+#topnav a {
+    float: left;
+    color: #443c3c;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#topnav a:hover {
+    background-color: white;
+    color: black;
+}
