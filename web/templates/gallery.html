@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block title %}Homepage{% endblock %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{url_for('static', filename='gallery.css')}}">
+{% endblock %}
+
+{% block content %}
+
+<div class="gallery">
+    {% for i, path, cap in zip(range(len(PATHS)), PATHS, CAPTIONS) %}
+        <img class="gallery-img" imgnum="{{i}}" src="{{url_for('static', filename=path)}}" 
+             onClick="showModal(this); set_modal_img(this.getAttribute('imgnum'))" 
+             alt="{{cap}}">
+    {% endfor %}
+</div>
+
+<div id="imgModal" class=modal>
+    <span class="modal-close" onClick="closeModal()">&times</span>
+    <img class="modal-img" id="img01"></img>
+    <span class="nav-arrow" id="left-navarrow" onClick="set_modal_img(curr_img-1)">&#10094;</span>
+    <span class="nav-arrow" id="right-navarrow"onClick="set_modal_img(curr_img+1)">&#10095;</span>
+    <div id="modal-caption"></div>
+</div>
+
+<script>
+    let modal = document.getElementById('imgModal');
+    let modalImg = document.getElementById('img01');
+    let modalCaption = document.getElementById('modal-caption');
+
+    imgs = document.getElementsByClassName('gallery-img');
+    n_imgs = imgs.length;
+
+    window.addEventListener("keydown", function (e) {
+        if (e.key == "Escape" || e.key == "Esc" || e.keyCode == 27) {
+            modal.style.display = "none";
+        }
+
+        if (e.keyCode == 37) {
+            // left key
+            set_modal_img(curr_img-1);
+        } else if (e.keyCode == 39) {
+            // right key
+            set_modal_img(curr_img+1);
+        }
+    })
+
+    // Close modal when click on modal thing (but not modal content)
+    window.onclick = function (e) {if (e.target == modal) {closeModal()}};
+
+    /**
+     * Makes modal visible by setting display property to block.
+    */
+    function showModal(img) {
+        modal.style.display = 'block';
+    }
+
+    /**
+     * Close modal by setting display property to none
+    */
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    let curr_img = 0;
+    function set_modal_img(i) {
+        // Clip(0,n_imgs-1)
+        curr_img = Math.max(0, Math.min(n_imgs-1, i));
+        modalImg.src = imgs[curr_img].src;
+        modalCaption.innerHTML = imgs[curr_img].alt;
+    }
+
+</script>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

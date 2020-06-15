@@ -1,24 +1,25 @@
 <!doctype html>
 <html>
+
   <head>
     {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
     <title>{% block title %}{% endblock %} - Hua Hin Villa</title>
     {% endblock %}
   </head>
+
   <body>
     <div id="topnav">
         <a id="left-logo" href="/">Hua Hin Villa</a>
         <a href="/">Home</a>
-        <a href="home">Location</a>
-        <a href="home">Contact</a>
-        <a href="home">About us</a>
+        <a href="gallery">Gallery</a>
+        <a href="location">Location</a>
+        <a href="/">Contact</a>
+        <a href="/">About us</a>
     </div>
 
     <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer">
-      {% block footer %}
-      {% endblock %}
-    </div>
+
+    <div id="footer">{% block footer %}{% endblock %}</div>
   </body>
 </html>

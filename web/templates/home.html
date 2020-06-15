@@ -9,70 +9,15 @@
 
 {% block content %}
 
-<div id="button-container">
-    <p>Click buttons to change image grid</p>
-        <button class="btn" onClick="home_img_grid()" arg="100%">1</button>
-        <button class="btn active" onClick="home_img_grid()" arg="50%">2</button>
-        <button class="btn" onClick="home_img_grid()" arg="25%">4</button>    
-    </div>
-
-    <!-- Some vertical spacing -->
-    <p style="margin-bottom: 20px;"></p>
-
-    <div class="imggridrow">
-        <div class="imggridcol">
-            <img src= "{{ url_for('static', filename='img1.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img2.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img3.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img4.jpg') }}" style="width:100%">
-        </div>
-        <div class="imggridcol">
-            <img src= "{{ url_for('static', filename='img5.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img6.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img7.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img8.jpg') }}" style="width:100%">
-        </div>
-        <div class="imggridcol">
-            <img src= "{{ url_for('static', filename='img9.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img10.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img11.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img12.jpg') }}" style="width:100%">
-        </div>
-        <div class="imggridcol">
-            <img src= "{{ url_for('static', filename='img13.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img14.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img15.jpg') }}" style="width:100%">
-            <img src= "{{ url_for('static', filename='img16.jpg') }}" style="width:100%">
-        </div>
-    </div>
-
-    <script>
-        let elements = document.getElementsByClassName("imggridcol");
-
-        let i = 0;
-
-        function home_img_grid() {
-            let a = event.target.getAttribute("arg");
-            for(i=0; i < elements.length; i++) {
-                elements[i].style.msFlex = a;
-                elements[i].style.flex = a;
-            }
-        }
-
-        let button_container = document.getElementById("button-container");
-        let buttons = button_container.getElementsByClassName("btn");
-
-        for (i=0; i < buttons.length; i++) {
-            buttons[i].addEventListener("click", function() {
-                let current = document.getElementsByClassName("btn active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-            });
-        }
-    </script>
+<div id="homepage-wrapper">
+    <h1 id="homepage-title">Hua Hin Villa</h1>
+    <p class="homepage-bodytext">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+    <img id="front-img" src="{{ url_for('static', filename='img10.jpg') }}">
+    <p class="homepage-bodytext">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+    <p class="homepage-bodytext">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+</div>
 
 {% endblock %}
 
 {% block footer %}
-    <p>Footer</p>
 {% endblock %}

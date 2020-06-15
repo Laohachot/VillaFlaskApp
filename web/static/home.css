@@ -1,42 +1,38 @@
-.imggridrow {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-    -ms-flex-wrap: wrap;
-}
-
-.imggridcolumn {
-    -ms-flex: 50%;
-    flex: 50%;
-    padding: 0 4px;
-}
-
-.imggridcolumn img {
-    margin-top: 16px;
-    vertical-align: middle;
-}
-
-.btn {
-    border: none;
-    outline: none;
-    padding: 10px 16px;
-    background-color: #f1f1f1;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.btn:hover {
-    background-color: #ddd;
-}
-
-.btn.active {
-    background-color: #666;
-    color: white;
-}
-
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
 
-#button-container {
+@media(min-width:800px) {
+    #homepage-wrapper {
+        width: 50%;
+        margin: auto;
+        outline: 1px solid rgb(238, 232, 174);
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+}
+
+
+#homepage-wrapper #front-img {
+    position: relative;
+    width: 80%;
+    display: block;
+    margin: auto;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 4px;
+    padding: 16px;
+}
+
+#homepage-title {
     text-align: center;
+    font-family: Tangerine;
+    font-size: 100px;
+    margin-top: 20px;
+    text-shadow: 4px 4px 4px rgb(238, 232, 174);
+    color: rgb(100, 100, 100);
+}
+
+.homepage-bodytext {
     font-family: Lato, sans-serif;
+    font-size: 24px;
+    text-align: center;
 }
