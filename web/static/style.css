@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Tangerine");
 
 /* ------- Layout ------- */
+
 #topnav {
     display: flex;
     position: sticky;
@@ -13,6 +14,7 @@
 }
 
 #topnav a {
+    /* float: left; */
     color: #443c3c;
     text-align: center;
     padding: 14px 16px;
@@ -34,6 +36,17 @@
 
 #topnav #left-logo:hover {
     color: rgb(255, 255, 255);
+}
+
+@media(max-width:1000px) {
+    #topnav {
+        flex-direction: column;
+        position: relative;
+    }
+
+    #topnav a{
+        outline: 1px solid rgb(255,255,255);
+    }
 }
 
 /* ------- Gallery ------- */
