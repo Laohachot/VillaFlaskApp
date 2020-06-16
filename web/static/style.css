@@ -1,29 +1,198 @@
-.main-title {
-    font-size: xx-large;
-    text-align: center;
-    margin-top: 1rem;
-    font-family: sans-serif;
-}
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
 
-#top-text {
-    text-align: center;
-}
-
+/* ------- Layout ------- */
 #topnav {
-    background-color: rgb(238, 232, 174);
+    display: flex;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    background-color: rgb(252, 247, 203);
     overflow: hidden;
+    z-index: 1;
 }
 
 #topnav a {
-    float: left;
     color: #443c3c;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 24px;
+    font-family: Lato, sans-serif;
 }
 
 #topnav a:hover {
     background-color: white;
     color: black;
+}
+
+#topnav #left-logo {
+    background-color: rgb(100, 100, 100);
+    font-weight: 900;
+    color: rgb(238, 232, 174);
+}
+
+#topnav #left-logo:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* ------- Gallery ------- */
+.gallery {
+    text-align: center;
+}
+
+.gallery .gallery-img {
+    width: 200px;
+    height: 200px;
+    margin: 10px 10px 0 0;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.gallery .gallery-img:hover {
+    filter: sepia(40%);
+    transform: scale(1.1);
+    z-index: -1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* fallback color */
+    background-color: rgba(0,0,0,0.85);
+    margin: auto;
+}
+
+.modal-img {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    max-height: 700px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: aliceblue;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-caption {
+    color: white;
+    text-align: center;
+    font-family: Lato, sans-serif;
+    margin-top: 20px;
+}
+
+.nav-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10%;
+    margin-top: -15%;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.nav-arrow:hover,
+.nav-arrow:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#right-navarrow {
+    right: 0px;
+}
+
+/* ------- Home ------- */
+#homepage-title {
+    text-align: center;
+    font-family: Tangerine;
+    font-size: 100px;
+    margin-top: 20px;
+    text-shadow: 4px 4px 4px rgb(238, 232, 174);
+    color: rgb(100, 100, 100);
+    margin-bottom: 5px;
+}
+
+#front-img {
+    max-width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 4px;
+    padding: 16px;
+}
+
+.homepage-bodytext {
+    font-family: Lato, sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* ------- Location ------- */
+#map {
+    height: 300px;
+    /* width: 100%; */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgb(238, 232, 174);
+}
+
+/* ------ General ------- */
+
+.infocontent-wrapper {
+    font-family: Lato, sans-serif;
+    font-size: 24px;
+    padding-bottom: 10000px;
+}
+.infocontent-wrapper h1{
+    color: rgb(100,100,100);
+}
+
+@media(min-width:1000px) {
+    .infocontent-wrapper {
+        width: 60%;
+        margin: auto;
+        outline: 1px solid rgb(238, 232, 174);
+    }
+}
+
+.text-content {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.scroll-anchor {
+    display: block;
+    position: relative;
+    top: -24px;
+    visibility: hidden;
 }

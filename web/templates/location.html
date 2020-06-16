@@ -3,26 +3,31 @@
 {% block title %}Location{% endblock %}
 {% block head %}
   {{ super() }}
-  <style>
-      #map {
-          height: 300px;
-          width: 100%;
-          margin-top: 10px;
-          margin-left: auto;
-          margin-right: auto;
-          border: 2px solid rgb(238, 232, 174);
-      }
-  </style>
 {% endblock %}
 
 {% block content %}
-<div id="map"></div>
+<div class="infocontent-wrapper">
+    <div id="map"></div>
+    
+    <div class="text-content">
+        <p style="font-weight: bold;">
+            Use correct address here: <br>
+            5057 Bergen <br>
+            Strandlien 25 <br>
+            Norway
+            <hr>
+        </p>
+        
+        <h1>Nearby</h1>
+        <p>Write about nearby things here</p>
+    </div>
+</div>
 
 <script>
     function initMap() {
-        let uluru = {lat: 12.580172, lng:99.940543};
-        let map = new google.maps.Map(document.getElementById('map'), {zoom: 6, center: uluru});
-        let marker = new google.maps.Marker({position: uluru, map: map});
+        let center = {lat: 12.580172, lng:99.940543};
+        let map = new google.maps.Map(document.getElementById('map'), {zoom: 6, center: center});
+        let marker = new google.maps.Marker({position: center, map: map});
     }
 </script>
 <script async defer 

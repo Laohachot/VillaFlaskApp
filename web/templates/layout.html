@@ -3,7 +3,8 @@
 
   <head>
     {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>{% block title %}{% endblock %} - Hua Hin Villa</title>
     {% endblock %}
   </head>
@@ -14,8 +15,8 @@
         <a href="/">Home</a>
         <a href="gallery">Gallery</a>
         <a href="location">Location</a>
-        <a href="/">Contact</a>
-        <a href="/">About us</a>
+        <a href="/#contact-anchor">Contact</a>
+        <a href="/#about-anchor">About us</a>
     </div>
 
     <div id="content">{% block content %}{% endblock %}</div>
